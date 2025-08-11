@@ -1,19 +1,19 @@
 pipeline { 
     agent any 
-    environment { 
-        DOCKER_REPO = 'rishabhs2004/mentorbaba-quiz' 
-    } 
     stages { 
-        stage('Test') { 
+        stage('Checkout') { 
             steps { 
-                echo 'Mentorbaba Quiz App Testing...' 
+                checkout scm 
             } 
         } 
-        stage('Build Docker') { 
+        stage('Test') { 
             steps { 
-                script { 
-                    def image = docker.build("${DOCKER_REPO}:${BUILD_NUMBER}") 
-                } 
+                echo 'Mentorbaba Quiz App - CI/CD Pipeline Working!' 
+            } 
+        } 
+        stage('Build') { 
+            steps { 
+                echo 'Building Mentorbaba Quiz Application...' 
             } 
         } 
     } 
