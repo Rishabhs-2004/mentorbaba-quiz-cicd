@@ -1,0 +1,125 @@
+/* 🌌 Background and base style */
+body {
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 🧠 Common Container for Quiz & Login */
+.container-box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #00ffff80;
+    width: 400px;
+    text-align: center;
+}
+
+/* Heading */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00eaff;
+}
+
+/* ❓ Question Box */
+.question-box {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.question-box p {
+    font-size: 1.1em;
+}
+
+.question-box label {
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* ⏲️ Timer */
+.timer {
+    color: #00ffff;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+/* 🔘 Button group */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.button-group button {
+    flex: 1 1 45%;
+    background-color: #00eaff;
+    border: none;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button-group button:hover {
+    background-color: #00bcd4;
+}
+
+/* 🔐 Login Form Style */
+form label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #00eaff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: black;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #00bcd4;
+}
+
+.register-link {
+    margin-top: 15px;
+    color: white;
+}
+
+.register-link a {
+    color: #00eaff;
+    text-decoration: none;
+}

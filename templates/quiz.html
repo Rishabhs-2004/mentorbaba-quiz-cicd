@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container-box">
+        <h1>🧠 MentorBaba Quiz App</h1>
+        <form id="quizForm" method="POST" action="/result">
+
+            <!-- Questions Start -->
+            <div class="question-box" id="question1">
+                <p><strong>1.</strong> What does AI stand for?</p>
+                <label><input type="radio" name="q1" value="Artificial Intel"> Artificial Intel</label>
+                <label><input type="radio" name="q1" value="Automated Info"> Automated Info</label>
+                <label><input type="radio" name="q1" value="Auto Internet"> Auto Internet</label>
+                <label><input type="radio" name="q1" value="Artificial Intelligence"> Artificial Intelligence</label>
+            </div>
+
+            <div class="question-box" id="question2" style="display: none;">
+                <p><strong>2.</strong> Who is known as the father of AI?</p>
+                <label><input type="radio" name="q2" value="Alan Turing"> Alan Turing</label>
+                <label><input type="radio" name="q2" value="John McCarthy"> John McCarthy</label>
+                <label><input type="radio" name="q2" value="Elon Musk"> Elon Musk</label>
+                <label><input type="radio" name="q2" value="Bill Gates"> Bill Gates</label>
+            </div>
+
+            <div class="question-box" id="question3" style="display: none;">
+                <p><strong>3.</strong> Which is an application of AI?</p>
+                <label><input type="radio" name="q3" value="Email"> Email</label>
+                <label><input type="radio" name="q3" value="Face Recognition"> Face Recognition</label>
+                <label><input type="radio" name="q3" value="Calculator"> Calculator</label>
+                <label><input type="radio" name="q3" value="Paint"> Paint</label>
+            </div>
+
+            <div class="question-box" id="question4" style="display: none;">
+                <p><strong>4.</strong> Which language is commonly used for AI?</p>
+                <label><input type="radio" name="q4" value="Python"> Python</label>
+                <label><input type="radio" name="q4" value="HTML"> HTML</label>
+                <label><input type="radio" name="q4" value="CSS"> CSS</label>
+                <label><input type="radio" name="q4" value="SQL"> SQL</label>
+            </div>
+
+            <div class="question-box" id="question5" style="display: none;">
+                <p><strong>5.</strong> What type of learning is used in AI training?</p>
+                <label><input type="radio" name="q5" value="Hard Learning"> Hard Learning</label>
+                <label><input type="radio" name="q5" value="Weak Learning"> Weak Learning</label>
+                <label><input type="radio" name="q5" value="Reinforcement Learning"> Reinforcement Learning</label>
+                <label><input type="radio" name="q5" value="Informal Learning"> Informal Learning</label>
+            </div>
+
+            <div class="question-box" id="question6" style="display: none;">
+                <p><strong>6.</strong> Which of the following is a branch of AI?</p>
+                <label><input type="radio" name="q6" value="Machine Learning"> Machine Learning</label>
+                <label><input type="radio" name="q6" value="Web Design"> Web Design</label>
+                <label><input type="radio" name="q6" value="Networking"> Networking</label>
+                <label><input type="radio" name="q6" value="Animation"> Animation</label>
+            </div>
+
+            <div class="question-box" id="question7" style="display: none;">
+                <p><strong>7.</strong> Which is not a type of AI?</p>
+                <label><input type="radio" name="q7" value="Reactive Machines"> Reactive Machines</label>
+                <label><input type="radio" name="q7" value="Limited Memory"> Limited Memory</label>
+                <label><input type="radio" name="q7" value="Supervised Memory"> Supervised Memory</label>
+                <label><input type="radio" name="q7" value="Self-awareness"> Self-awareness</label>
+            </div>
+
+            <div class="question-box" id="question8" style="display: none;">
+                <p><strong>8.</strong> AI is mainly used in which industry?</p>
+                <label><input type="radio" name="q8" value="Agriculture"> Agriculture</label>
+                <label><input type="radio" name="q8" value="Gaming"> Gaming</label>
+                <label><input type="radio" name="q8" value="Plumbing"> Plumbing</label>
+                <label><input type="radio" name="q8" value="Painting"> Painting</label>
+            </div>
+
+            <div class="question-box" id="question9" style="display: none;">
+                <p><strong>9.</strong> Turing Test is used to check:</p>
+                <label><input type="radio" name="q9" value="Memory Power"> Memory Power</label>
+                <label><input type="radio" name="q9" value="AI Intelligence"> AI Intelligence</label>
+                <label><input type="radio" name="q9" value="Speed"> Speed</label>
+                <label><input type="radio" name="q9" value="Storage"> Storage</label>
+            </div>
+
+            <div class="question-box" id="question10" style="display: none;">
+                <p><strong>10.</strong> Siri is an example of:</p>
+                <label><input type="radio" name="q10" value="AI Assistant"> AI Assistant</label>
+                <label><input type="radio" name="q10" value="Browser"> Browser</label>
+                <label><input type="radio" name="q10" value="Antivirus"> Antivirus</label>
+                <label><input type="radio" name="q10" value="Hardware"> Hardware</label>
+            </div>
+            <!-- Questions End -->
+
+            <div class="timer">Time Left: <span id="timer">30</span> sec</div>
+
+            <div class="button-group">
+                <button type="button" onclick="prevQuestion()">Previous</button>
+                <button type="button" onclick="nextQuestion()">Next</button>
+                <button type="reset">Clear</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
