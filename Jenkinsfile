@@ -1,5 +1,8 @@
 pipeline { 
     agent any 
+    environment { 
+        DOCKER_REPO = 'rishabhs2004/mentorbaba-quiz' 
+    } 
     stages { 
         stage('Checkout') { 
             steps { 
@@ -8,12 +11,18 @@ pipeline {
         } 
         stage('Test') { 
             steps { 
-                echo 'Mentorbaba Quiz App - CI/CD Pipeline Working!' 
+                echo 'Testing Mentorbaba Quiz App...' 
             } 
         } 
-        stage('Build') { 
+        stage('Build Docker Image') { 
             steps { 
-                echo 'Building Mentorbaba Quiz Application...' 
+                script { 
+                    def image = docker.build("${DOCKER_REPO}:${BUILD_NUMBER}") 
+                    docker.withRegistry('', 'dockerhub-creds') { 
+                        image.push() 
+                        image.push('latest') 
+                    } 
+                } 
             } 
         } 
     } 
