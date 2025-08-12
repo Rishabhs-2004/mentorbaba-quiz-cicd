@@ -30,7 +30,7 @@ pipeline {
     steps {
         sshagent(['ec2-ssh-key']) {
             sh '''
-            ssh -o StrictHostKeyChecking=no ubuntu@<EC2_PUBLIC_IP> "
+            ssh -o StrictHostKeyChecking=no ubuntu@3.110.189.189"
                 docker pull ${DOCKER_REPO}:latest &&
                 docker stop quiz-container || true &&
                 docker rm quiz-container || true &&
